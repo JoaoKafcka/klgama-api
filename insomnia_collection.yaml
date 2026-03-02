@@ -1,0 +1,161 @@
+type: collection.insomnia.rest/5.0
+schema_version: "5.1"
+name: klgama
+meta:
+  id: wrk_bd8163190813403f901296a1ecceecfa
+  created: 1772316246555
+  modified: 1772316246555
+  description: ""
+collection:
+  - url: http://localhost:3000/api/demandas
+    name: Criar Demanda
+    meta:
+      id: req_fc0bff2a825747e18c43f955183832a5
+      created: 1772316258125
+      modified: 1772415257410
+      isPrivate: false
+      description: ""
+      sortKey: -1772316258125
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "descricao": "teste",
+          "data_vencimento": "2026-03-02"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.3.1
+        description: ""
+        disabled: false
+    authentication:
+      type: bearer
+      token: ""
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/api/login
+    name: Login
+    meta:
+      id: req_dd027bc9cbb048529ccbed377f60b602
+      created: 1772317697467
+      modified: 1772415156938
+      isPrivate: false
+      description: ""
+      sortKey: -1772317697467
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "email": "usuario@gmail.com",
+          "senha": "senha123",
+          "idCliente": "id-do-cliente"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.3.1
+        description: ""
+        disabled: false
+    authentication:
+      type: bearer
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/api/clientes
+    name: Criar Cliente
+    meta:
+      id: req_2ac7b56f5c50472cb6a34ec65e9a9f9b
+      created: 1772320872742
+      modified: 1772415214066
+      isPrivate: false
+      description: ""
+      sortKey: -1772326768466
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "nome": "Cliente"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.3.1
+        description: ""
+        disabled: false
+    authentication:
+      type: bearer
+      token: ""
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: GET http://localhost:3000/api/usuarios
+    name: Criar Usuario
+    meta:
+      id: req_79f7d28053da463b908e6fb6f35a6785
+      created: 1772326768366
+      modified: 1772415096811
+      isPrivate: false
+      description: ""
+      sortKey: -1772326768366
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "nome": "Usuario",
+          "email": "usuario@gmail.com",
+          "senha": "senha123",
+          "idCliente": "id-do-cliente",
+          "gestor": true
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.3.1
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_a9971ae43a803efd0b2ab1e43786ba3049fb8788
+    created: 1772316246558
+    modified: 1772316246558
+environments:
+  name: Base Environment
+  meta:
+    id: env_a9971ae43a803efd0b2ab1e43786ba3049fb8788
+    created: 1772316246557
+    modified: 1772316246557
+    isPrivate: false

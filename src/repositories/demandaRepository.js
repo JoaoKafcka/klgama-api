@@ -22,5 +22,17 @@ const listarDemandasPorCliente = async (idCliente) => {
     const result = await db.query(query, [idCliente]);
     return result.rows;
 }
+const atualizarDemanda = async (id, descricao, dataVencimento, idCliente) => {
+    // Only updates if the demand belongs to the user's client tenant to ensure isolation
+    const query = `
+        UPDATE demandas 
+        SET descricao = $1, data_vencimento = $2
+        WHERE id = $3 AND idcliente = $4
+        RETURNING id, descricao, data_cadastro, data_vencimento, idusuario, idcliente;
+    `;
+    const values = [descricao, dataVencimento, id, idCliente];
+    const result = await db.query(query, values);
+    return result.rows[0];
+};
 
-module.exports = {criarDemanda, listarDemandasPorCliente, listarDemandasPorUsuario};
+module.exports = { criarDemanda, listarDemandasPorCliente, listarDemandasPorUsuario, atualizarDemanda };
